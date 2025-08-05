@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/navigation_splash">
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.example.finalone.auth_feature.ui.LoginFragment"
+        android:label="login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/navigation_splash"
+        android:name="com.example.finalone.auth_feature.ui.SplashFragment"
+        android:label="splsh"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_navigation_splash_to_navigation_register"
+            app:destination="@id/navigation_register" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_register"
+        android:name="com.example.finalone.auth_feature.ui.RegisterFragment"
+        android:label="register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_navigation_register_to_navigation_login"
+            app:destination="@id/navigation_login" />
+    </fragment>
+</navigation>
